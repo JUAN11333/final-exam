@@ -111,10 +111,11 @@ export default function Home({ suppliers }) {
 }
 
 import axios from "axios";
-
 export async function getServerSideProps() {
-  const res = await fetch(`http://localhost:3000/api/supplier/article/`);
-  const suppliers = await res.json();
+  const response = await axios.get(
+    `http://final-exam-6218207.vercel.app/api/supplier/article/`
+  );
+  const suppliers = response.data;
 
   return { props: { suppliers } };
 }

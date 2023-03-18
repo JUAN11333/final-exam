@@ -159,9 +159,10 @@ import axios from "axios";
 
 export async function getServerSideProps({ params }) {
   console.debug("params", params);
-  const response = await axios.get(
+  const res = await axios.get(
     `http://final-exam-6218207.vercel.app/api/supplier/article/${params.id}`
   );
-  const suppliers = response.data;
+  const suppliers = res.data;
+  console.debug("supplier 1", suppliers);
   return { props: { suppliers } };
 }
