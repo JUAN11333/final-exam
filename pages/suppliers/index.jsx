@@ -13,6 +13,16 @@ export default function Home({ suppliers }) {
       });
   }
 
+  suppliers.sort((a, b) => {
+    if (a.supplier_name < b.supplier_name) {
+      return -1;
+    } else if (a.supplier_name > b.supplier_name) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+
   return (
     <>
       <Head>
