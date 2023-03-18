@@ -39,9 +39,14 @@ export default function Supplier({ supplier }) {
   console.log("supplier 2", supplier);
   if (!supplier)
     return (
-      <div>
+      <div style={{ margin: "1rem", color: "#555" }}>
         <p>Supplier not found</p>
-        <Link href="/suppliers">Back</Link>
+        <Link
+          href="/suppliers"
+          style={{ color: "#555", textDecoration: "underline" }}
+        >
+          Back
+        </Link>
       </div>
     );
 
@@ -51,15 +56,42 @@ export default function Supplier({ supplier }) {
         <title>Update{supplier.title}</title>
       </Head>
 
-      <div style={{ margin: "1rem" }}>
-        <Link href="/suppliers">Back</Link>
-        <form onSubmit={handleSubmit(updateSupplier)}>
-          <h1>Update Supplier</h1>
-          <label htmlFor="supplier_name">Supplier Name</label>
+      <div style={{ margin: "1rem", color: "#555" }}>
+        <Link
+          href="/suppliers"
+          style={{ color: "#555", textDecoration: "underline" }}
+        >
+          Back
+        </Link>
+        <form
+          onSubmit={handleSubmit(updateSupplier)}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            backgroundColor: "#ffffff",
+            borderRadius: "10px",
+            padding: "2rem",
+          }}
+        >
+          <h1 style={{ color: "#7f7f7f", textAlign: "center" }}>
+            Update Supplier
+          </h1>
+          <label htmlFor="supplier_name" style={{ marginTop: "1rem" }}>
+            Supplier Name
+          </label>
           <br />
           <input
             id="supplier_name"
             {...register("supplier_name", { required: true })}
+            style={{
+              padding: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "5px",
+              fontSize: "1.2rem",
+              width: "100%",
+              marginTop: "0.5rem",
+            }}
             placeholder="Supplier Name"
           />
           <br />
@@ -69,6 +101,14 @@ export default function Supplier({ supplier }) {
           <input
             id="adress"
             {...register("adress", { required: true })}
+            style={{
+              padding: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "5px",
+              fontSize: "1.2rem",
+              width: "100%",
+              marginTop: "0.5rem",
+            }}
             placeholder="Adress"
           />
           <br />
@@ -78,11 +118,35 @@ export default function Supplier({ supplier }) {
           <input
             id="phone_number"
             {...register("phone_number", { required: true })}
+            style={{
+              padding: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "5px",
+              fontSize: "1.2rem",
+              width: "100%",
+              marginTop: "0.5rem",
+            }}
             placeholder="Phone Number"
           />
           <br />
 
-          <input type="submit" />
+          <input
+            type="submit"
+            className="button"
+            style={{
+              backgroundColor: "#7f7f7f",
+              border: "none",
+              color: "white",
+              padding: "1rem 2rem",
+              textAlign: "center",
+              textDecoration: "none",
+              display: "inline-block",
+              fontSize: "1rem",
+              borderRadius: "5px",
+              marginTop: "2rem",
+              cursor: "pointer",
+            }}
+          />
           <p>{data}</p>
           <br />
         </form>
@@ -91,12 +155,13 @@ export default function Supplier({ supplier }) {
   );
 }
 
+import axios from "axios";
+
 export async function getServerSideProps({ params }) {
   console.debug("params", params);
-  const res = await fetch(
-    `http://localhost:3000/api/supplier/article/${params.id}`
+  const response = await axios.get(
+    `http://final-exam-6218207.vercel.app/api/supplier/article/${params.id}`
   );
-  const supplier = await res.json();
-  console.debug("supplier 1", supplier);
-  return { props: { supplier } };
+  const suppliers = response.data;
+  return { props: { suppliers } };
 }

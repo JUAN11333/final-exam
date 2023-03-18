@@ -31,14 +31,39 @@ export default function AddSupplierPage() {
 
   return (
     <div style={{ margin: "1rem" }}>
-      <Link href="/suppliers">〈Back</Link>
-      <form onSubmit={handleSubmit(saveSupplier)}>
-        <h1>New Supplier</h1>
-        <label htmlFor="supplier_name">Supplier Name</label>
+      <Link
+        href="/suppliers"
+        style={{ color: "#555", textDecoration: "underline" }}
+      >
+        Back
+      </Link>
+      <form
+        onSubmit={handleSubmit(saveSupplier)}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          backgroundColor: "#ffffff",
+          borderRadius: "10px",
+          padding: "2rem",
+        }}
+      >
+        <h1 style={{ color: "#7f7f7f", textAlign: "center" }}>New Supplier</h1>
+        <label htmlFor="supplier_name" style={{ marginTop: "1rem" }}>
+          Supplier Name
+        </label>
         <br />
         <input
           id="supplier_name"
           {...register("supplier_name", { required: true })}
+          style={{
+            padding: "0.5rem",
+            border: "1px solid #ccc",
+            borderRadius: "5px",
+            fontSize: "1.2rem",
+            width: "100%",
+            marginTop: "0.5rem",
+          }}
           placeholder="Supplier Name"
         />
         <br />
@@ -48,6 +73,14 @@ export default function AddSupplierPage() {
         <input
           id="adress"
           {...register("adress", { required: true })}
+          style={{
+            padding: "0.5rem",
+            border: "1px solid #ccc",
+            borderRadius: "5px",
+            fontSize: "1.2rem",
+            width: "100%",
+            marginTop: "0.5rem",
+          }}
           placeholder="Adress"
         />
         <br />
@@ -57,10 +90,34 @@ export default function AddSupplierPage() {
         <input
           id="phone_number"
           {...register("phone_number", { required: true })}
+          style={{
+            padding: "0.5rem",
+            border: "1px solid #ccc",
+            borderRadius: "5px",
+            fontSize: "1.2rem",
+            width: "100%",
+            marginTop: "0.5rem",
+          }}
           placeholder="Phone Number"
         />
         <br />
-        <input type="submit" />
+        <input
+          type="submit"
+          className="button"
+          style={{
+            backgroundColor: "#7f7f7f",
+            border: "none",
+            color: "white",
+            padding: "1rem 2rem",
+            textAlign: "center",
+            textDecoration: "none",
+            display: "inline-block",
+            fontSize: "1rem",
+            borderRadius: "5px",
+            marginTop: "2rem",
+            cursor: "pointer",
+          }}
+        />
         <p>{data}</p>
       </form>
     </div>
