@@ -1,38 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Final Exam 
 
-## Getting Started
+### Author: Juan Wang
+### ID: 6218207
 
-First, run the development server:
+####Exam details:
+In the initial, I create a new Next.js project and connect the mongoDB, install some command that I will use in next work. Basically, almost the code comes from what the teacher taught us to do in class and I I made a few changes to that base. For the UI, I put the "style" inline, it's a little cumbersome, but it's less error-prone. When I finish the exam, I have some problem with updating. It always shows "500 error", so I change the "fetch" and use the new import which is called "axios", then it can be work in vercel.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+####Function description:
+One table with "Update" and "Delete" function which is a button you can click. You can update or delete the data of this line. And it also have the "Add new suppliers" function which is a button you can add the new data. After you finish the adding work, you will see the new supplier data in the index page. It also have the "Back" button that you can go back to the index page.
